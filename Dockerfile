@@ -16,7 +16,7 @@ RUN sed -i -e 's@bind 127.0.0.1@bind 0.0.0.0@g' /etc/redis.conf
 #关闭保护模式
 RUN sed -i -e 's@protected-mode yes@protected-mode no@g' /etc/redis.conf
 #设置密码
-#RUN echo "requirepass 123456" >> /etc/redis.conf
+RUN echo "requirepass 123456" >> /etc/redis.conf
 #启动
 ENTRYPOINT [ "/usr/bin/redis-server","/etc/redis.conf"]
 CMD []
